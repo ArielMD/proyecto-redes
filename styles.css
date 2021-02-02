@@ -66,6 +66,10 @@ body {
   color: whitesmoke;
 }
 
+.navbar-relative {
+  position: relative;
+}
+
 .links {
   text-decoration: none;
   color: whitesmoke;
@@ -154,6 +158,31 @@ body {
   font-size: 2rem;
   margin: 3rem 0rem 3rem 0rem;
   color: #146499;
+}
+
+.article-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.article-images img {
+  width: 40%;
+  height: auto;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.container-video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
+}
+
+.video {
+  width: 560px;
+  height: 315px;
 }
 
 .footer {

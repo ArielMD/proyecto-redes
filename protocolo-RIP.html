@@ -9,7 +9,7 @@
   </head>
   <body>
     <main class="">
-      <nav class="navbar">
+      <nav class="navbar navbar-relative">
         <a class="navbar-title links" href="/">Redes de computadora</a>
         <div class="navbar-menu">
           <a class="links" href="/#introduccion">Introducción</a>
@@ -19,17 +19,54 @@
         </div>
       </nav>
     </main>
-    <!--Aqui inicia la introducción-->
-    <div class="">
-      <div class="">
-        <ul class="">
-          <li class=""><a data-toggle="pill" href="#info1">Introducción</a></li>
-          <li><a data-toggle="pill" href="#info2">Apartado 2</a></li>
-          <li><a data-toggle="pill" href="#info3">Apartado 3</a></li>
-          <li><a data-toggle="pill" href="#info4">Apartado 4</a></li>
-        </ul>
+    <div class="article">
+      <h1 class="article-title">Protocolo RIP</h1>
+      <p>
+        El protocolo de información de enrutamiento (Por sus siglas RIP -
+        Routing Information Protocol) es un protocolo de enrutamiento interno,
+        es decir, para esa parte que no está directamente conectada al Backbone
+        de internet.
+      </p>
+      <p>
+        Es comúnmente utilizado para administrar información de enrutadores en
+        una red autocontenida como una LAN corporativa o una WAN privada. Este
+        protocolo se centra en enviar la información de la tabla de enrutamiento
+        al enrutador más cercano en ciertos intervalos de tiempo (regularmente
+        de 30 segundos). También, este protocolo se basa en el método del Vector
+        de Distancias por lo que siempre calculara una métrica que le ayudará a
+        encontrar la ruta más corta que debe realizar un paquete dependiendo de
+        los equipos intermedios sobre los que deba pasar para llegar al destino,
+        siendo el límite de 15 “Saltos” como comúnmente es llamado para así
+        evitar una carga grande de tráfico en la red.
+      </p>
+      <div class="article-images">
+        <img src="assets/RIP-request.png" alt="" />
+        <img src="assets/RIP-response.png" alt="" />
+      </div>
+      <p>
+        Su funcionamiento consiste en que cada cierto tiempo, las terminales
+        configuradas con RIP, envian y reciben mensajes (mensajes de solicitud y
+        respuesta) que poseen ciertos datos que sirven para el algortimo
+        configurado en el enrutador.
+      </p>
+      <div class="article-images">
+        <img src="assets/format-request.png" alt="" />
+        <img src="assets/table.png" alt="" />
+      </div>
+      <p>
+        Para conocer más acerca de este protocolo puede ver el siguiente video
+      </p>
+      <div class="container-video">
+        <iframe
+          class="video"
+          src="https://www.youtube.com/embed/YOUDn-f1ww4"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
+
     <footer class="footer">
       <div class="team">
         <h2>Integrantes</h2>
