@@ -18,6 +18,97 @@
         </div>
       </nav>
     </main>
+    <div class="article">
+      <h1 class="article-title">Protocolo RIP</h1>
+      <p>
+        El protocolo Open Shortest Path First (OSPF) es un protocolo que
+        involucra a una red más grande en la que el protocolo RIP no da abasto.
+        Este protocolo está centrado en el método de estados de enlace además de
+        un algoritmo que elige los caminos más cortos entre enlaces. En este
+        protocolo cada enrutador conoce a los enrutadores vecinos y las
+        direcciones que posee cada uno. Además de esto, cada enrutador sabe a
+        qué “distancia” (arbitraria) se encuentra cada uno. Así cuando se tiene
+        que enviar un paquete entre diversos sistemas, este se envía por la ruta
+        en la que se de la menor cantidad de saltos.
+      </p>
+      <p>
+        En una red OSPF, los direccionadores o sistemas de la misma área
+        mantienen una base de datos de enlace-estado idéntica que describe la
+        topología del área. Cada direccionador o sistema del área genera su
+        propia base de datos de enlace-estado a partir de los anuncios de
+        enlace-estado (LSA - Link State Ad) que recibe de los demás
+        direccionadores o sistemas de la misma área y de los LSA que él mismo
+        genera. El LSA es un paquete que contiene información sobre los vecinos
+        y los costes de cada vía. Basándose en la base de datos de
+        enlace-estado, cada direccionador o sistema calcula un árbol de
+        extensión de vía más corta, siendo él mismo la raíz.
+      </p>
+      <p>
+        El proceso de intercambio de bases de datos se da cuando previamente se
+        ha hecho un intercambio de paquetes Hello en donde primero se descubren
+        los vecinos.
+      </p>
+      <div class="article-images">
+        <img src="assets/process-OSPF.png" alt="" />
+      </div>
+      <p>
+        La en la anterior figura ilustra el proceso de descubrir vecinos y
+        establecer adyacencias en el caso de dos sistemas de la subred 9.7.85.0.
+        Cada sistema tiene una interfaz OSPF con la subred común 9.7.85.0
+        (interfaz 9.7.85.1 para el sistema A e interfaz 9.7.85.2 para el sistema
+        B). La subred 9.7.85.0 pertenece al área 1.1.1.1.
+      </p>
+      <p>Es importante recalcar las etapas por las que pasa el protocolo:</p>
+      <ul>
+        <li>
+          Fase EXSTART. Es el primer paso del intercambio de bases de datos de
+          enlace-estado. Los dos sistemas negocian quién hace de maestro y quién
+          hace de subordinado.
+        </li>
+        <li>
+          Fase EXCHANGE. Los dos sistemas intercambian paquetes de descripción
+          de base de datos para averiguar qué anuncios de enlace-estado (LSA) no
+          están en la base de datos de enlace-estado de cada sistema. Cada
+          sistema almacena los LSA que no están en la base de datos de
+          enlace-estado en la lista de retransmisiones.
+        </li>
+        <li>
+          Fase LOADING. Cada sistema envía paquetes de petición de enlace estado
+          para pedir al vecino (en este ejemplo, sería el otros sistema) que
+          envíe los LSA completos que se almacenaron en la lista de
+          retransmisiones durante la fase EXCHANGE. El vecino responde a la
+          petición con los LSA en paquetes de actualización de enlace estado.
+        </li>
+        <li>
+          Fase FULL. Cuando dos sistemas terminan de intercambiarse los LSA, y
+          sus bases de datos de enlace-estado ya están sincronizadas, se
+          establece la adyacencia entre los dos sistemas.
+        </li>
+      </ul>
+
+      <p>
+        Cuando ya se han establecido adyacencias entre todos los direccionadores
+        o sistemas de un área, cada direccionador o sistema del área envía
+        periódicamente un LSA para compartir sus adyacencias o para informar de
+        su cambio de estado. Comparando las adyacencias establecidas con los
+        LSA, los direccionadores o sistemas del área pueden descubrir los
+        cambios de topología del área y actualizar debidamente sus bases de
+        datos de enlace-estado.
+      </p>
+
+      <p>
+        Para conocer más acerca de este protocolo puede ver el siguiente video
+      </p>
+      <div class="container-video">
+        <iframe
+          class="video"
+          src="https://www.youtube.com/embed/wK24zn66Dbs"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
     <footer class="footer">
       <div class="team">
         <h2>Integrantes</h2>
