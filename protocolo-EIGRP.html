@@ -7,28 +7,171 @@
     <title>Protocolo EIGRP</title>
   </head>
   <body>
-    <main class="">
-      <nav class="navbar navbar-relative">
-        <a class="navbar-title links" href="/">Redes de computadora</a>
+    <main class="header-protocolos">
+      <nav class="navbar">
+        <a class="navbar-title links" href="/">Redes de Computadoras</a>
         <div class="navbar-menu">
-          <a class="links" href="/#introduccion">Introducción</a>
+          <a class="links" href="/index.html">Introducción</a>
           <a class="links" href="/protocolo-RIP.html">Protocolo RIP</a>
           <a class="links" href="/protocolo-OSPF.html">Protocolo OSPF</a>
           <a class="links" href="/protocolo-EIGRP.html">Protocolo EIGRP</a>
+          <a class="links" href="/creditos.html">Créditos</a>
         </div>
       </nav>
     </main>
-    <footer class="footer">
-      <div class="team">
-        <h2>Integrantes</h2>
-        <li>Ariel May</li>
-        <li>Issac Canche</li>
-        <li>David Ita</li>
-        <li>Julio Cabrera</li>
-        <li>Tex</li>
+    <div class="article">
+      <h1 class="article-title">Protocolo EIGRP</h1>
+      <p>
+        El EIGRP es una versión mejorada de IGRP. La tecnología de vector de igual 
+        distancia que se usa en IGRP también se emplea en EIGRP. Además, la información
+         de la distancia subyacente no presenta cambios. Las propiedades de convergencia y 
+         la eficacia de operación de este protocolo han mejorado significativamente. 
+         Esto permite una arquitectura mejorada y, a la vez, retiene la inversión existente en IGRP.
+      </p>
+      <p>
+        La tecnología de convergencia está basada en una investigación realizada en SRI
+         International. El algoritmo difusor de actualización (DUAL) es el algoritmo usado 
+         para obtener la loop-libertad en cada instante en un cómputo de la ruta. Esto les
+          permite a todos los routers involucrados en una topología cambiar para sincronizarse 
+          al mismo tiempo. Los routers que no se ven afectados por los cambios de topología 
+          no se incluyen en el recálculo. El tiempo de convergencia con DUAL compite con el de 
+          cualquier otro protocolo de ruteo existente.
+      </p>
+      <p>
+        EIGRP ha sido extendido para que sea independiente del protocolo de la capa de red, y así 
+        permita que DUAL soporte otros conjuntos de protocolos.
+      </p>
+      <p>
+        EIGRP tiene cuatro componentes básicos:
+      </p>
+      <ul>
+        <li>
+          Recuperación/Detección de vecino.
+        </li>
+        <li>
+          Protocolo de transporte confiable.
+        </li>
+        <li>
+          Máquina de estados finitos DUAL.
+        </li>
+        <li>
+          Módulos dependientes del protocolo.
+        </li>
+      </ul>
+      <p>
+        La detección o recuperación de vecinos es el proceso que utilizan los routers para aprender 
+        dinámicamente de otros routers conectados directamente a sus redes. Los routers también deben 
+        detectar cuando sus vecinos se vuelven inalcanzables o dejan de funcionar. Este proceso se logra 
+        con carga general baja al enviar pequeños paquetes de saludo. Mientras se reciben paquetes de saludo, 
+        un router puede determinar que un vecino está activo y en funcionamiento. Una vez que esto se determina, 
+        los routers de la vecindad pueden intercambiar información de ruteo.
+      </p>
+      <p>
+        El transporte confiable es responsable de garantizar, las entregas ordenadas de paquete EIGRP a 
+        todos los vecinos. Soporta la transmisión de multicast o los paquetes de unidifusión entremezclados. 
+        Algunos paquetes EIGRP deben transmitirse de manera confiable, mientras que para otros esto no es necesario. 
+        Para mayor eficacia, la confiabilidad sólo se brinda cuando es necesaria. Por ejemplo, en una red de acceso 
+        múltiple que tiene capacidades de multidifusión, tal como Ethernet, no es necesario enviar saludos confiables a 
+        todos los vecinos en forma individual. Entonces, EIGRP envía un saludo de multidifusión único con una indicación 
+        en el paquete que informa a los receptores que dicho paquete no necesita ser reconocido. Otros tipos de paquetes, 
+        como las actualizaciones, requieren reconocimiento y eso se indica en el paquete. El transporte confiable tiene una 
+        disposición de enviar los paquetes de multidifusión rápidamente cuando hay paquetes sin acuse de recibo pendientes. 
+        Esto ayuda a asegurar que el tiempo de convergencia permanezca lento ante la presencia de links con distintas velocidades.
+      </p>
+      <div class="article-images">
+        <img class="zoomea" src="assets/EIGRP.png" alt="" />
       </div>
-      <div class="project">
-        <h1>Proyecto de Redes de computadora</h1>
+      <p>
+        EIGRP tiene la noción de rutas internas y externas. Rutas internas son aquellas que se originaron dentro de un 
+        sistema autónomo (AS) EIGRP. Por lo tanto, una red conectada en forma directa y configurada para ejecutar EIGRP 
+        se considera una ruta interna y se propaga junto con esta información a través del AS EIGRP. Las rutas externo 
+        son unas que han sido aprendidas por otro Routing Protocol o residen en la tabla de ruteo como Static rutas. Estas 
+        rutas son etiquetadas individualmente con la identidad de su origen.
+      </p>
+      <p>
+        Las rutas externo se marcan con etiqueta con la siguiente información:
+      </p>
+      <ul>
+        <li>
+          El Router ID del router EIGRP que redistribuyó la ruta.
+        </li>
+        <li>
+          El número de AS en el que reside el destino.
+        </li>
+        <li>
+          Un indicador de administrador configurable.
+        </li>
+        <li>
+          La ID de protocolo del protocolo externo.
+        </li>
+        <li>
+          El métrico del protocolo externo.
+        </li>
+        <li>
+          Indicadores de bit para ruteo predeterminado.
+        </li>
+      </ul>
+      <p>
+        Como ejemplo, supongamos que hay un AS con tres routers de borde. Un router de borde es aquél que ejecuta más de 
+        un protocolo de ruteo. COMO EIGRP de las aplicaciones como el Routing Protocol. Supongamos que dos de los routers 
+        de borde, BR1 y BR2, utilizan el método de abrir primero el trayecto más corto (OSPF) y el otro, BR3, utiliza el 
+        protocolo de información de ruteo (RIP).
+      </p>
+      <p>
+        Las rutas aprendidas por uno de los routers de borde OSPF, BR1, pueden redistribuirse condicionalmente en EIGRP. 
+        Esto significa que el EIGRP que funciona en el BR1 anuncia las rutas OSPF dentro de su AS. Cuando lo hace así pues, 
+        hace publicidad de la ruta y la marca con etiqueta como ruta aprendido OSPF con un igual métrico a la tabla de ruteo 
+        métrica de la OSPF ruta. La router-identificación se fija al BR1. La ruta EIGRP se propaga a otros routers de borde. 
+        Supongamos que BR3, el router del borde RIP, también anuncia los mismos destinos que BR1. Por lo tanto, BR3 redistribuye 
+        las rutas RIP en EIGRO AS. BR2, entonces, tiene suficiente información para determinar el punto de entrada de AS para la 
+        ruta, el protocolo de ruteo original utilizado y la métrica. Además, el administrador de la red podría asignar valores de 
+        etiqueta a destinos específicos al redistribuir la ruta. BR2 puede utilizar esta información para hacer uso del router o 
+        volver a publicarlo en OSPF.
+      </p>
+      <p>
+        El diagrama de red que se muestra ilustra el modo en que DUAL converge. El ejemplo hace hincapié sólo en el destino N. Cada 
+        nodo muestra su coste a N (en los saltos). Las flechas muestran el sucesor del nodo. Entonces, por ejemplo, C usa A para llegar 
+        a N y el costo es 2. 
+      </p>
+      <div class="article-images">
+        <img class="zoomea" src="assets/diagrama-red-EIGRP.png" alt=""/>
+      </div>
+      <p>
+        Si se produce un error en el link entre A y B, B envía una consulta informando a sus vecinos que ha perdido su sucesor factible. 
+        D recibe la interrogación y la determina si tiene algunos otros sucesores factibles. Si esto no sucede, se tiene que iniciar un 
+        cálculo de ruta e ingresar el estado activo. Sin embargo, en este caso, C es un sucesor posible porque su costo (2) es menor que 
+        el costo actual de D (3) al destino N. D puede cambiar a C como su sucesor. Tenga en cuenta que A y C no participaron porque no 
+        fueron afectadas por el cambio.
+      </p>
+      <p>
+        Hagamos que un cálculo de ruta tenga lugar. En este escenario, supongamos que el link entre A y C falla. C determina que perdió 
+        a su sucesor y que no tiene a otros posibles sucesores. D no se considera un sucesor factible debido a que su métrica promocionada 
+        (3) es mayor al actual costo C (2) para alcanzar el destino N. C debe realizar un cálculo de ruta para el destino N. C envía una 
+        petición a su único vecino D. D responde ya que su sucesor no se modificó. D no necesita realizar un cálculo de ruta. Cuando el C 
+        recibe la contestación que sabe que todos los vecinos han procesado las noticias sobre el error al N. en este momento, el C puede 
+        elegir su nuevo sucesor factible D con un coste de (4) para alcanzar el destino N. Observe que A y B eran inafectados por el cambio 
+        de la topología y D necesitó contestar simplemente al C.
+      </p>
+      <p>
+        Para conocer más acerca de este protocolo puede ver el siguiente video 
+      </p>
+      <div class="container-video">
+        <iframe
+          class="video"
+          src="https://www.youtube.com/embed/H4MIhZDTog4"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="carrera">
+          <h5>Licenciatura en Ingeniería de Software</h5>
+      </div>
+      <div class="escuela">
+          <img class="img-logo" src="assets/uady-logo.png" alt="">
+          <h4>Facultad de Matemáticas UADY</h4>
       </div>
     </footer>
   </body>

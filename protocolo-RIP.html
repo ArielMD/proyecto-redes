@@ -8,14 +8,15 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
   </head>
   <body>
-    <main class="">
-      <nav class="navbar navbar-relative">
-        <a class="navbar-title links" href="/">Redes de computadora</a>
+    <main class="header-protocolos">
+      <nav class="navbar">
+        <a class="navbar-title links" href="/">Redes de Computadoras</a>
         <div class="navbar-menu">
-          <a class="links" href="/#introduccion">Introducción</a>
+          <a class="links" href="/index.html">Introducción</a>
           <a class="links" href="/protocolo-RIP.html">Protocolo RIP</a>
           <a class="links" href="/protocolo-OSPF.html">Protocolo OSPF</a>
           <a class="links" href="/protocolo-EIGRP.html">Protocolo EIGRP</a>
+          <a class="links" href="/creditos.html">Créditos</a>
         </div>
       </nav>
     </main>
@@ -25,7 +26,11 @@
         El protocolo de información de enrutamiento (Por sus siglas RIP -
         Routing Information Protocol) es un protocolo de enrutamiento interno,
         es decir, para esa parte que no está directamente conectada al Backbone
-        de internet.
+        de internet. RIP es el protocolo de enrutamiento por vector de distancia 
+        más antiguo. Si bien RIP carece de la sofisticación de los protocolos de 
+        enrutamiento más avanzados, su simplicidad y amplia utilización en forma 
+        continua representan el testimonio de su persistencia. RIP no es un protocolo 
+        "en extinción".
       </p>
       <p>
         Es comúnmente utilizado para administrar información de enrutadores en
@@ -40,8 +45,8 @@
         evitar una carga grande de tráfico en la red.
       </p>
       <div class="article-images">
-        <img src="assets/RIP-request.png" alt="" />
-        <img src="assets/RIP-response.png" alt="" />
+        <img class="zoomea" src="assets/RIP-request.png" alt="" />
+        <img class="zoomea" src="assets/RIP-response.png" alt="" />
       </div>
       <p>
         Su funcionamiento consiste en que cada cierto tiempo, las terminales
@@ -50,9 +55,30 @@
         configurado en el enrutador.
       </p>
       <div class="article-images">
-        <img src="assets/format-request.png" alt="" />
-        <img src="assets/table.png" alt="" />
+        <img class="zoomea" src="assets/format-request.png" alt="" />
+        <img class="zoomea" src="assets/table.png" alt="" />
       </div>
+      <p>
+        Existen diferentes versiones para el protocolo RIP donde se descatada las
+        características de cada una acontinuación:
+      </p>
+      <ul>
+        <li>
+          RIP v1:No soporta subredes ni CIDR (Encaminamiento Inter-Dominios sin Clases, 
+          estándar para la interpretación de direcciones IP ). Tampoco incluye ningún 
+          mecanismo de autentificación de los mensajes. Actualmente en desuso. Se rige 
+          por la RFC 1058.
+        </li>
+        <li>
+          RIP v2: Soporta subredes, CIDR y VLSM. Soporta autenticación utilizando uno de 
+          los siguientes mecanismos: no autentificación, autentificación mediante contraseña, 
+          autentificación mediante contraseña codificada mediante MD5 (desarrollado por Ronald 
+          Rivest). Se rige por la RFC 1723-2453.
+        </li>
+        <li>
+          RIPng: RIP para IPv6. Se rige por la RFC 2080.
+        </li>
+      </ul>
       <p>
         Para conocer más acerca de este protocolo puede ver el siguiente video
       </p>
@@ -66,18 +92,13 @@
         ></iframe>
       </div>
     </div>
-
     <footer class="footer">
-      <div class="team">
-        <h2>Integrantes</h2>
-        <li>Ariel May</li>
-        <li>Issac Canche</li>
-        <li>David Ita</li>
-        <li>Julio Cabrera</li>
-        <li>Tex</li>
+      <div class="carrera">
+          <h5>Licenciatura en Ingeniería de Software</h5>
       </div>
-      <div class="project">
-        <h1>Proyecto de Redes de computadora</h1>
+      <div class="escuela">
+          <img class="img-logo" src="assets/uady-logo.png" alt="">
+          <h4>Facultad de Matemáticas UADY</h4>
       </div>
     </footer>
   </body>

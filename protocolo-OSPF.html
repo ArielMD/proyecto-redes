@@ -7,19 +7,20 @@
     <title>Protocolo OSPF</title>
   </head>
   <body>
-    <main class="">
-      <nav class="navbar navbar-relative">
-        <a class="navbar-title links" href="/">Redes de computadora</a>
+    <main class ="header-protocolos">
+      <nav class="navbar">
+        <a class="navbar-title links" href="/">Redes de Computadoras</a>
         <div class="navbar-menu">
-          <a class="links" href="/#introduccion">Introducción</a>
+          <a class="links" href="/index.html">Introducción</a>
           <a class="links" href="/protocolo-RIP.html">Protocolo RIP</a>
           <a class="links" href="/protocolo-OSPF.html">Protocolo OSPF</a>
           <a class="links" href="/protocolo-EIGRP.html">Protocolo EIGRP</a>
+          <a class="links" href="/creditos.html">Créditos</a>
         </div>
       </nav>
     </main>
     <div class="article">
-      <h1 class="article-title">Protocolo RIP</h1>
+      <h1 class="article-title">Protocolo OSPF</h1>
       <p>
         El protocolo Open Shortest Path First (OSPF) es un protocolo que
         involucra a una red más grande en la que el protocolo RIP no da abasto.
@@ -48,11 +49,32 @@
         ha hecho un intercambio de paquetes Hello en donde primero se descubren
         los vecinos.
       </p>
+      <p>
+        Las ventajas principales de OSPF son las siguientes:
+      </p>
+      <ul>
+        <li>
+          En comparación con los protocolos de direccionamiento de distancia-vector 
+          como el protocolo de información de direccionamiento (RIP), OSPF es más 
+          adecuado para servir entre redes heterogéneas de gran tamaño. OSPF puede 
+          recalcular las rutas en muy poco tiempo cuando cambia la topología de la red. 
+        </li>
+        <li>
+          Con OSPF, puede dividir un sistema autónomo (AS) en áreas y mantenerlas 
+          separadas para disminuir el tráfico de direccionamiento de OSPF y el 
+          tamaño de la base de datos de enlace-estado de cada área. 
+        </li>
+        <li>
+          OSPF proporciona un direccionamiento multivía de coste equivalente. 
+          Se pueden añadir rutas duplicadas a la pila TCP utilizando saltos 
+          siguientes distintos.
+        </li>
+      </ul><br>
       <div class="article-images">
-        <img src="assets/process-OSPF.png" alt="" />
+        <img class="zoomea" src="assets/process-OSPF.png" alt="" />
       </div>
       <p>
-        La en la anterior figura ilustra el proceso de descubrir vecinos y
+        La anterior figura ilustra el proceso de descubrir vecinos y
         establecer adyacencias en el caso de dos sistemas de la subred 9.7.85.0.
         Cada sistema tiene una interfaz OSPF con la subred común 9.7.85.0
         (interfaz 9.7.85.1 para el sistema A e interfaz 9.7.85.2 para el sistema
@@ -110,16 +132,12 @@
       </div>
     </div>
     <footer class="footer">
-      <div class="team">
-        <h2>Integrantes</h2>
-        <li>Ariel May</li>
-        <li>Issac Canche</li>
-        <li>David Ita</li>
-        <li>Julio Cabrera</li>
-        <li>Tex</li>
+      <div class="carrera">
+          <h5>Licenciatura en Ingeniería de Software</h5>
       </div>
-      <div class="project">
-        <h1>Proyecto de Redes de computadora</h1>
+      <div class="escuela">
+          <img class="img-logo" src="assets/uady-logo.png" alt="">
+          <h4>Facultad de Matemáticas UADY</h4>
       </div>
     </footer>
   </body>
