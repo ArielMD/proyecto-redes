@@ -69,7 +69,7 @@ body {
 }
 
 .header-protocolos {
-  padding-top: .1px;
+  padding-top: 0.1px;
   padding-bottom: 2rem;
 }
 
@@ -148,7 +148,7 @@ body {
 .card-img-user {
   margin-top: 1rem;
   width: 60%;
-  height: 60%
+  height: 60%;
 }
 
 .card-title,
@@ -161,7 +161,7 @@ body {
   margin: 1.5rem;
 }
 
-.card-user p{
+.card-user p {
   text-align: right;
   margin-bottom: 5rem;
 }
@@ -199,10 +199,10 @@ body {
   justify-content: space-evenly;
 }
 
-.zoomea:hover{
+.zoomea:hover {
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .article-images img {
@@ -211,7 +211,7 @@ body {
   object-fit: contain;
   object-position: center center;
   overflow: hidden;
-  box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, .4);
+  box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.4);
 }
 
 .container-video {
@@ -232,17 +232,17 @@ body {
   color: whitesmoke;
   display: flex;
 }
-.footer .carrera{
+.footer .carrera {
   width: 50%;
   margin-left: 10%;
   list-style: none;
 }
 
 .footer .carrera h5 {
-  margin: .4rem;
+  margin: 0.4rem;
 }
 
-.footer .carrera  {
+.footer .carrera {
   margin: 0.5rem 0rem 0.5rem 0rem;
 }
 
@@ -256,12 +256,18 @@ body {
 }
 
 .footer .escuela h4 {
-  margin: .8rem;
+  margin: 0.8rem;
 }
 
 .img-logo {
   width: 3.5rem;
   height: 2.5rem;
-  margin: .2rem;
+  margin: 0.2rem;
   margin-left: 0rem;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
