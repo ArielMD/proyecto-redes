@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
+    <title>Protocolos de enrutamiento dinamicos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
-    <script src="main.js"></script>
   </head>
   <body>
     <main class="hero">
@@ -14,45 +13,112 @@
         <a class="navbar-title links" href="/">Redes de computadora</a>
         <div class="navbar-menu">
           <a class="links" href="/#introduccion">Introducción</a>
-          <a class="links" href="/protocolo-RIP">Protocolo RIP</a>
-          <a class="links" href="/protocolo-OSPF">Protocolo OSPF</a>
-          <a class="links" href="/protocolo-EIGRP">Protocolo EIGRP</a>
+          <a class="links" href="/protocolo-RIP.html">Protocolo RIP</a>
+          <a class="links" href="/protocolo-OSPF.html">Protocolo OSPF</a>
+          <a class="links" href="/protocolo-EIGRP.html">Protocolo EIGRP</a>
         </div>
       </nav>
       <div class="hero-wrapper">
         <h1 class="hero-title">Protocolos de enrutamiento dinámico</h1>
         <p>Redes y Seguridad de Computadoras</p>
-        <button class="btn">iniciar</button>
+        <a class="links" href="/#introduccion">
+          <button class="btn">iniciar</button></a
+        >
       </div>
     </main>
-    <section class="cards">
-      <div class="card">
-        <img class="card-img" src="assets/RIP.png" alt="" />
-        <h1 class="card-title">Protocolo RIP</h1>
-        <p class="card-content">
-          El protocolo de información de enrutamiento (Por sus siglas RIP -
-          Routing Information Protocol) es un...
-        </p>
-        <button class="card-button">leer más</button>
-      </div>
-      <div class="card">
-        <img class="card-img" src="assets/OSPF.png" alt="" />
-        <h1 class="card-title">Protocolo OSPF</h1>
-        <p class="card-content">
-          El protocolo Open Shortest Path First (OSPF) es un protocolo que
-          involucra a una...
-        </p>
-        <button class="card-button">leer más</button>
-      </div>
-      <div class="card">
-        <img class="card-img" src="assets/EIGRP.png" alt="" />
-        <h1 class="card-title">Protocolo EIGRP</h1>
-        <p class="card-content">
-          El EIGRP es una versión mejorada de IGRP. La tecnología de vector de
-          igual distancia que...
-        </p>
-        <button class="card-button">leer más</button>
-      </div>
-    </section>
+    <!--Aqui va la parte de la introduccion-->
+    <article class="article" id="introduccion">
+      <h1 class="article-title">Introducción</h1>
+      <p>
+        Cuando se habla de un intercambio de datos, información o incluso
+        realizar la comunicación entre dos sistemas tecnológicos mediante la
+        red, el concepto de enrutamiento dinámico (adaptativo) es
+        imprescindible. Con este modelo, diversos sistemas operando bajo una
+        misma red podrán entablar una comunicación de forma eficiente. Una breve
+        analogía de lo que se hablará a continuación es la de un viajero que
+        toma una ruta alternativa para llegar a su trabajo, sabiendo que su ruta
+        habitual está retrasada o existe algo que le afecta su paso por la
+        misma.
+      </p>
+
+      <h2 class="article-title">Enrutamiento dinamico</h2>
+      <p>
+        El enrutamiento dinámico es un proceso por el cual se determina una ruta
+        óptima y eficaz que debe seguir el paquete de información enviado de un
+        host a otro (tal y como lo establece el objetivo del enrutamiento). La
+        diferencia de que no es necesaria la intervención manual de un
+        administrador de red en caso de falla o actualización. Sabemos que dicho
+        proceso manual puede resultar no ser lo más práctico, además de no ser
+        predecible el momento en que se requiera ayuda de un administrador de
+        red, por lo que el enrutamiento dinámico otorga ventajas en tiempo y
+        facilidad sobre la administración de redes. Además de esto, con el
+        enrutamiento dinámico se busca reducir la congestión de la red y también
+        agilizar el proceso del descubrimiento de rutas vecinas.
+      </p>
+      <p>
+        Para llevar a cabo el enrutamiento dinámico se establecieron algunos
+        métodos que son usados en ciertos protocolos. Estos métodos son: (1)
+        Vector de distancias, (2) Estado de enlace, (3) Sistema híbrido. Es
+        importante recalcar que no se hablará de estos métodos en sí, sino de
+        tres protocolos importantes dentro del enrutamiento dinámico, estamos
+        hablando de los protocolos RIP, OSPF y EIGRP.
+      </p>
+    </article>
+    <div class="article">
+      <h1 class="article-title">Protocolos de enrutamiento dinamicos</h1>
+
+      <section class="cards">
+        <div class="card">
+          <img class="card-img" src="assets/RIP.png" alt="" />
+          <h1 class="card-title">Protocolo RIP</h1>
+          <p class="card-content">
+            El protocolo de información de enrutamiento (Por sus siglas RIP -
+            Routing Information Protocol) es un...
+          </p>
+          <button
+            class="btn card-button"
+            onclick="window.location.href='/protocolo-RIP.html'"
+          >
+            leer más
+          </button>
+        </div>
+        <div class="card">
+          <img class="card-img" src="assets/OSPF.png" alt="" />
+          <h1 class="card-title">Protocolo OSPF</h1>
+          <p class="card-content">
+            El protocolo Open Shortest Path First (OSPF) es un protocolo que
+            involucra a una...
+          </p>
+          <button
+            class="btn card-button"
+            onclick="window.location.href='/protocolo-OSPF.html'"
+          >
+            leer más
+          </button>
+        </div>
+        <div class="card">
+          <img class="card-img" src="assets/EIGRP.png" alt="" />
+          <h1 class="card-title">Protocolo EIGRP</h1>
+          <p class="card-content">
+            El EIGRP es una versión mejorada de IGRP. La tecnología de vector de
+            igual distancia que...
+          </p>
+          <button
+            class="btn card-button"
+            onclick="window.location.href='/protocolo-EIGRP.html'"
+          >
+            leer más
+          </button>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <h2>Integrantes</h2>
+      <li>Ariel May</li>
+      <li>Issac Canche</li>
+      <li>David Ita</li>
+      <li>Julio Cabrera</li>
+      <li>Tex</li>
+    </footer>
   </body>
 </html>
